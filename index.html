@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+
+    <title>bootstrapValidate</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h3 class="text-center">Bootstrap Validate</h3>
+      <form class="my-4">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nama">Nama *</label>
+            <input type="text" class="form-control" id="nama" autocomplete="off" placeholder="Nama">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" autocomplete="off" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" autocomplete="off" placeholder="Password">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="passwordconf">Konfirmasi Password</label>
+            <input type="password" class="form-control" id="passwordconf" autocomplete="off" placeholder="Konfirmasi Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="alamat">Alamat</label>
+          <input type="text" class="form-control" id="alamat" autocomplete="off" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="text" class="form-control" id="website" autocomplete="off" placeholder="https://www.armannurhidayat.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="lahir">Tanggal Lahir</label>
+            <input type="text" class="form-control" id="lahir" autocomplete="off">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="umur">Umur</label>
+            <input type="text" class="form-control" id="umur" autocomplete="off">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="kota">Kota</label>
+            <input type="text" class="form-control" id="kota" autocomplete="off">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+      </form>
+    </div>
+
+    <!-- bootstrapValidate -->
+    <script src="vendor/bootstrap-validate.js"></script>
+    <script type="text/javascript">
+      bootstrapValidate('#nama', 'required:Nama harus diisi!');
+      bootstrapValidate('#email', 'email:Email tidak valid!');
+      bootstrapValidate('#passwordconf', 'matches:#password:Password tidak sama!');
+      bootstrapValidate('#alamat', 'max:10:Maksimal 10 karakter!');
+      bootstrapValidate('#website', 'url:Website tidak valid!');
+      bootstrapValidate('#lahir', 'ISO8601:Format tidak sesuai dengan YYYY-MM-DD!');
+      bootstrapValidate('#umur', 'numeric:Format harus berupa angka!');
+      bootstrapValidate('#kota', 'min:5:Minumum 5 karakter!');
+    </script>
+  </body>
+</html>
